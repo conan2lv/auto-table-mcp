@@ -1,9 +1,11 @@
 {
-  "name": "autotablemcp",
-  "version": "0.1.0",
+  "name": "auto-table-mcp-service",
+  "version": "1.0.0",
+  "description": "AutoTable组件助手 MCP 服务, 用于查询组件信息, 使用方法和自动生成代码",
+  "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "autotablemcp": "dist/index.js"
+    "auto-table-mcp-service": "dist/index.js"
   },
   "scripts": {
     "build": "tsc && shx chmod +x dist/index.js",
@@ -13,18 +15,19 @@
     "inspector": "npx -y @modelcontextprotocol/inspector node ./dist/index.js"
   },
   "files": [
-    "dist"
+    "dist/**/*",
+    "README.md",
+    "package.json"
   ],
   "keywords": [
-    "mcp"
+    "mcp", "table", "auto-table", "react", "component", "list", "virtual-list", "form-table", "group-table", "shrinkable-table"
   ],
   "repository": {
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "conan_lv",
   "license": "MIT",
-  "description": "AutoTableMCP",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.1",
     "express": "^5.1.0",
