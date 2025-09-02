@@ -1,6 +1,6 @@
 export const SortableTableDemo = {
   title: "非虚拟列表下拖拽表格，不支持树型结构拖拽",
-  keywords: ['拖拽', '排序', 'sort'],
+  keywords: ['拖拽', '排序', 'sort', '非虚拟列表'],
   description: "设置 isSortable 属性开启此功能，设置 sortableOptions 进行配置和监听拖拽事件",
   tips: `
     1. 任何时候, AutoTable组件必须包含三个属性, columns, dataSource, rowKey

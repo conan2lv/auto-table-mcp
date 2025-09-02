@@ -7,9 +7,10 @@ export const NewSortableTableDemo = {
     2. 当定义columns时, 需要从src/components/AutoTable引入ColumnProps来做ts定义
     3. 当有一列为操作时, 需要从src/components/AutoTable中引入ActionGroup组件来处理
     4. 只有AutoTable的isVirtual为true时, 才会使用此示例
-    5. 需要给AutoTable设置isSortable为true, isVirtual为true
-    6. 需要给AutoTable的sortableOptions属性中配置onChange方法, 否则拖拽排序结果不生效
-    7. 结合sortable-options-props的参数定义给出正确的sortableOptions配置
+    5. 如果需要支持树型数据拖拽, 需要使用此示例
+    6. 需要给AutoTable设置isSortable为true, isVirtual为true
+    7. 需要给AutoTable的sortableOptions属性中配置onChange方法, 否则拖拽排序结果不生效
+    8. 结合sortable-options-props的参数定义给出正确的sortableOptions配置
   `,
   codes: 
     `import React, { useState } from 'react';
