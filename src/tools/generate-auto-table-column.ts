@@ -30,27 +30,6 @@ const registryTool = (server: McpServer) => {
     async ({ columns }) => {
       const generateColumns = (columns ?? []).map((column) => {
         const res: any = getFixedColInfo(column.title, column.dataIndex, column.width);
-
-        if (column.isAction) {
-          res.iconNumber = 2;
-          res.render = `(text, record) => {
-            return (
-              <ActionGroup
-                actions={[
-                  {
-                    title: '编辑',
-                    icon: 'icon-edit',
-                  },
-                  {
-                    title: '删除',
-                    icon: 'icon-delete',
-                  },
-                ]}
-              />
-            );
-          }`;
-        }
-
         return res;
       });
 
@@ -58,6 +37,7 @@ const registryTool = (server: McpServer) => {
         content: [
           {
             type: "text",
+            description: "AutoTable组件所使用到的columns定义",
             text: `const columns: ColumnProps<any>[] = ${JSON.stringify(
               generateColumns,
               null,
