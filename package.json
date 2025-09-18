@@ -1,6 +1,6 @@
 {
   "name": "auto-table-mcp-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AutoTable组件助手 MCP 服务, 用于查询组件信息, 使用方法和自动生成代码",
   "main": "dist/index.js",
   "type": "module",
@@ -20,7 +20,16 @@
     "package.json"
   ],
   "keywords": [
-    "mcp", "table", "auto-table", "react", "component", "list", "virtual-list", "form-table", "group-table", "shrinkable-table"
+    "mcp",
+    "table",
+    "auto-table",
+    "react",
+    "component",
+    "list",
+    "virtual-list",
+    "form-table",
+    "group-table",
+    "shrinkable-table"
   ],
   "repository": {
     "type": "git",
