@@ -1,6 +1,6 @@
 {
   "name": "auto-table-mcp-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AutoTable组件助手 MCP 服务, 用于查询组件信息, 使用方法和自动生成代码",
   "main": "dist/index.js",
   "type": "module",
