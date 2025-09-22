@@ -7,7 +7,7 @@ const registryTool = (server: McpServer) => {
   server.tool(
     "get-auto-table-example",
     `根据关键词匹配 AutoTable 及其派生组件 ( GroupTable, ShrinkableTable, TableForm ) 组件示例
-适用场景：
+适用场景:
 1. 用户提供关键词查询相关示例
 2. 用户想要查找具有特定功能的AutoTable示例
 3. 需要基于功能需求推荐合适的示例代码
@@ -21,7 +21,11 @@ const registryTool = (server: McpServer) => {
 能力:
 1. 根据用户提供的关键词在示例的title、keywords、description中进行匹配
 2. 返回匹配度最高的示例或多个相关示例
-3. 提供示例的完整信息，包括代码、说明和使用提示`,
+3. 提供示例的完整信息，包括代码、说明和使用提示
+
+限制:
+1. 始终通过src/components/AutoTable引入AutoTable组件
+2. 无需设置不常用属性border, size, scroll.x`,
     { keywords: z.array(z.string()).describe("关键词列表") },
     async ({ keywords }) => {
       const matchedExamples: Record<string, any> = {};
