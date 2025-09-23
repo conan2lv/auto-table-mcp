@@ -1,6 +1,5 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { getFixedColInfo } from "../utils/getColInfo.js";
 
 /** 根据操作列的按钮信息使用ActionGroup组件生成符合 AutoTable 组件规范的操作列 */
 const registryTool = (server: McpServer) => {
@@ -31,17 +30,17 @@ const registryTool = (server: McpServer) => {
           })
         )
         .describe("操作列的按钮信息列表"),
-      hasMore: z.boolean().describe("是否有更多操作(竖着排列的三个点即为更多)"),
       actionCount: z
-        .boolean()
+        .number()
         .describe("除了Dropdown中及更多按钮外剩余展示的按钮数量"),
     },
-    async ({ actions, hasMore, actionCount }) => {
+    async ({ actions, actionCount }) => {
       const generateActionGroup = (actions ?? [])
         .filter((action) => !action.isMore)
         .map((action) => {
           return {
-            ...action,
+            title: action.title,
+            icon: action.icon,
             rules: [],
             onClick: () => {
               // TODO
@@ -49,7 +48,7 @@ const registryTool = (server: McpServer) => {
           };
         });
 
-      const titleLimit = hasMore ? `tileLimit=${actionCount}` : ``;
+      const titleLimit = (actions ?? []).some(i => i.isMore) ? `titleLimit=${actionCount}` : ``;
 
       return {
         content: [

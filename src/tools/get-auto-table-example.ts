@@ -21,11 +21,7 @@ const registryTool = (server: McpServer) => {
 能力:
 1. 根据用户提供的关键词在示例的title、keywords、description中进行匹配
 2. 返回匹配度最高的示例或多个相关示例
-3. 提供示例的完整信息，包括代码、说明和使用提示
-
-限制:
-1. 始终通过src/components/AutoTable引入AutoTable组件
-2. 无需设置不常用属性border, size, scroll.x`,
+3. 提供示例的完整信息，包括代码、说明和使用提示`,
     { keywords: z.array(z.string()).describe("关键词列表") },
     async ({ keywords }) => {
       const matchedExamples: Record<string, any> = {};

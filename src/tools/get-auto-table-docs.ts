@@ -11,11 +11,7 @@ const registryTool = (server: McpServer) => {
 2. 用户询问使用AutoTable过程中的注意事项
 3. 用户询问非固宽列和固宽列的定义与区别
 4. 用户询问AutoTable的内置方法
-5. 用户询问在使用AutoTable过程中遇到一些问题的解决方法
-
-限制:
-1. 始终通过src/components/AutoTable引入AutoTable组件
-2. 无需设置不常用属性border, size, scroll.x`,
+5. 用户询问在使用AutoTable过程中遇到一些问题的解决方法`,
     {},
     async () => {
       const documentation = await getAutoTableDocumentation();
